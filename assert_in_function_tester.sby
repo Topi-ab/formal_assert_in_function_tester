@@ -1,0 +1,18 @@
+[tasks]
+bmc
+cover
+
+[options]
+bmc: mode bmc
+cover: mode cover
+depth 50
+
+[engines]
+smtbmc
+
+[script]
+ghdl --std=08 assert_in_function_tester.vhdl -e assert_in_function_tester
+prep -top assert_in_function_tester
+
+[files]
+assert_in_function_tester.vhdl
